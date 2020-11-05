@@ -4,8 +4,8 @@ function initSampleData() {
   //Adding default data to textbox
   document.getElementById('tbCSV').value = 
 "UDHD_MARKET,UDHD_BRAND_NAME,UDHD_LANGUAGE,UDHD_REPLY_TO_ADDRESS,UDHD_REPLY_TO_NAME,UDHD_PREF_CENTER,UDHD_WEBSITE_DOMAIN,UDHD_LOGO,UDHD_PRIVACY_POLICY,UDHD_COOKIE_POLICY\r\n"+
-"PK,Ponds,EN,cec.philippines@client.com,client Customer Care,,ponds.com,,,\r\n"+
-"PK,Cif,AR,cec.philippines@client.com,cec.philippines@client.com,,cif.com,,,";
+"DE,Brand1,EN,clientcare@client.com,client Customer Care,,brandsite.com,,,\r\n"+
+"GB,Brand2,AR,clientcare@client.com,clientcare@client.com,,brandsite.com,,,";
 
 //document.getElementById('tbCSV').value = document.getElementById('tbCSV').value + getMarketMapping("AU");
 
@@ -17,35 +17,35 @@ var date = new Date();
 
 var xmlString = "<?xml version='1.0'?>\r\n" +
 "<package author=\"Mark Daniel (mdaniel@adobe.com)\" buildDate=\""+ buildDate +"\"\r\n" +
-"         buildNumber=\"10586\" buildVersion=\"7.0\" label=\"CIAB_BrandInstaller\" name=\"CIAB_BrandInstaller\">\r\n" +
+"         buildNumber=\"10586\" buildVersion=\"7.0\" label=\"MB_BrandInstaller\" name=\"MB_BrandInstaller\">\r\n" +
 "  <entities schema=\"nms:branding\">\r\n";
 
 var welcomeXmlString = "<?xml version='1.0'?>\r\n" +
 "<package author=\"Mark Daniel (mdaniel@adobe.com)\" buildDate=\""+ buildDate +"\"\r\n" +
-"         buildNumber=\"10586\" buildVersion=\"7.0\" label=\"CIAB_WelcomeInstaller5.0\"\r\n" +
-"         name=\"CIAB_WelcomeInstaller3.0\">\r\n";
+"         buildNumber=\"10586\" buildVersion=\"7.0\" label=\"MB_WelcomeInstaller5.0\"\r\n" +
+"         name=\"MB_WelcomeInstaller3.0\">\r\n";
 
 var transactionalEmail = "<?xml version='1.0'?>\r\n" +
 "<package author=\"Mark Daniel (mdaniel@adobe.com)\" buildDate=\""+ buildDate +"\"\r\n" +
-"         buildNumber=\"10586\" buildVersion=\"7.0\" label=\"CIAB_TransactionalEmailInstaller\" name=\"CIAB_TransactionalEmailInstaller\">\r\n";
+"         buildNumber=\"10586\" buildVersion=\"7.0\" label=\"MB_TransactionalEmailInstaller\" name=\"MB_TransactionalEmailInstaller\">\r\n";
 
 var transactionalSms = "<?xml version='1.0'?>\r\n" +
 "<package author=\"Mark Daniel (mdaniel@adobe.com)\" buildDate=\""+ buildDate +"\"\r\n" +
-"         buildNumber=\"10586\" buildVersion=\"7.0\" label=\"CIAB_TransactionalSmsInstaller\" name=\"CIAB_TransactionalSmsInstaller\">\r\n";
+"         buildNumber=\"10586\" buildVersion=\"7.0\" label=\"MB_TransactionalSmsInstaller\" name=\"MB_TransactionalSmsInstaller\">\r\n";
 
 
 var otpSMS = "<?xml version='1.0'?>\r\n" +
 "<package author=\"Mark Daniel (mdaniel@adobe.com)\" buildDate=\""+ buildDate +"\"\r\n" +
-"         buildNumber=\"10586\" buildVersion=\"7.0\" label=\"CIAB_OTP_SMS_Installer\" name=\"CIAB_OTP_SMS_Installer\">\r\n";
+"         buildNumber=\"10586\" buildVersion=\"7.0\" label=\"MB_OTP_SMS_Installer\" name=\"MB_OTP_SMS_Installer\">\r\n";
 
 var otpEML = "<?xml version='1.0'?>\r\n" +
 "<package author=\"Mark Daniel (mdaniel@adobe.com)\" buildDate=\""+ buildDate +"\"\r\n" +
-"         buildNumber=\"10586\" buildVersion=\"7.0\" label=\"CIAB_OTP_Email_Installer\" name=\"CIAB_OTP_Email_Installer\">\r\n";
+"         buildNumber=\"10586\" buildVersion=\"7.0\" label=\"MB_OTP_Email_Installer\" name=\"MB_OTP_Email_Installer\">\r\n";
 
 
 var contentBlocks = "<?xml version='1.0'?>\r\n" +
 "<package author=\"Mark Daniel (mdaniel@adobe.com)\" buildDate=\""+ buildDate +"\"\r\n" +
-"         buildNumber=\"10586\" buildVersion=\"7.0\" label=\"CIAB_ContentBlock_Installer\" name=\"CIAB_ContentBlock_Installer\">\r\n";
+"         buildNumber=\"10586\" buildVersion=\"7.0\" label=\"MB_ContentBlock_Installer\" name=\"MB_ContentBlock_Installer\">\r\n";
 
 
 var brandSetting              = "";
@@ -176,14 +176,14 @@ function iterateCsvData(){
     // Call footer append functions and insert into download file
     updateInstallerSettings();
 
-    (brandSetting == true) ?  downloadPackage('CIAB_BrandInstaller.xml', returnXmlString()) : brandSetting = false; 
-    (welcomeSetting == true) ? downloadPackage('CIAB_WelcomeInstaller.xml',returnWelcomeXml()) : welcomeSetting = false;
-    (transactionalEmailSetting == true) ? downloadPackage('CIAB_TransactionalEmailInstaller.xml', returnTransactionalEmailXml()) : transactionalEmailSetting=false;
-    (transactionalSmsSetting == true)   ? downloadPackage('CIAB_TransactionalSmsInstaller.xml',   returnTransactionalSmsXml())   : transactionalSmsSetting=false;
+    (brandSetting == true) ?  downloadPackage('MB_BrandInstaller.xml', returnXmlString()) : brandSetting = false; 
+    (welcomeSetting == true) ? downloadPackage('MB_WelcomeInstaller.xml',returnWelcomeXml()) : welcomeSetting = false;
+    (transactionalEmailSetting == true) ? downloadPackage('MB_TransactionalEmailInstaller.xml', returnTransactionalEmailXml()) : transactionalEmailSetting=false;
+    (transactionalSmsSetting == true)   ? downloadPackage('MB_TransactionalSmsInstaller.xml',   returnTransactionalSmsXml())   : transactionalSmsSetting=false;
 // Stubs for OTP Setup
-    (OtpEmlSetting == true) ? downloadPackage('CIAB_OTP_EMAIL_Installer.xml', returnOTPtransactionalEML()) : OtpEmlSetting=false;
-    (OtpSmsSetting == true) ? downloadPackage('CIAB_OTP_SMS_Installer.xml',    returnOTPtransactionalSMS()) : OtpSmsSetting=false;    
-    (contentBlockSetting == true) ? downloadPackage('CIAB_ContentBlock_' + distinctLanguage.toString() +'_Installer.xml',    returnContentBlockXml()) : contentBlockSetting=false;  
+    (OtpEmlSetting == true) ? downloadPackage('MB_OTP_EMAIL_Installer.xml', returnOTPtransactionalEML()) : OtpEmlSetting=false;
+    (OtpSmsSetting == true) ? downloadPackage('MB_OTP_SMS_Installer.xml',    returnOTPtransactionalSMS()) : OtpSmsSetting=false;    
+    (contentBlockSetting == true) ? downloadPackage('MB_ContentBlock_' + distinctLanguage.toString() +'_Installer.xml',    returnContentBlockXml()) : contentBlockSetting=false;  
    
 }
 
