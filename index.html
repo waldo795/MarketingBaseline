@@ -3,7 +3,7 @@
 function initSampleData() {
   //Adding default data to textbox
   document.getElementById('tbCSV').value = 
-"UDHD_MARKET,UDHD_BRAND_NAME,UDHD_LANGUAGE,UDHD_REPLY_TO_ADDRESS,UDHD_REPLY_TO_NAME,UDHD_PREF_CENTER,UDHD_WEBSITE_DOMAIN,UDHD_LOGO,UDHD_PRIVACY_POLICY,UDHD_COOKIE_POLICY\r\n"+
+"MARKET,BRAND_NAME,LANGUAGE,REPLY_TO_ADDRESS,REPLY_TO_NAME,UNSUBSCRIPTION_URL,WEBSITE_DOMAIN,LOGO,PRIVACY_POLICY_URL,COOKIE_POLICY_URL\r\n"+
 "DE,Brand1,EN,clientcare@client.com,client Customer Care,,brandsite.com,,,\r\n"+
 "GB,Brand2,AR,clientcare@client.com,clientcare@client.com,,brandsite.com,,,";
 
@@ -2343,7 +2343,7 @@ function buildOTPtransactionalSMS(brandArray){
 </script>
 
 <H1>Provide CSV content below:</H1>
-<button id="btInitSampleData" onclick="initSampleData();">Show me an example of XML data structure</button></br>
+<button id="btInitSampleData" onclick="initSampleData();">Show me an example of CSV data structure</button></br>
 <textarea name="" id="tbCSV" cols="100" rows="3"></textarea>
 
 <!-- Set to display:block in order to troubleshoot. Otherwise keep it to display:none -->
